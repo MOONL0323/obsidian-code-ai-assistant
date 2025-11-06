@@ -1,0 +1,48 @@
+{
+  "name": "obsidian-code-ai-assistant",
+  "version": "1.0.0",
+  "description": "基于 Costrict 架构的 Obsidian AI 代码助手",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "obsidian",
+    "ai",
+    "code-assistant",
+    "gitlab",
+    "git"
+  ],
+  "author": "MOONL0323",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.19.0",
+    "obsidian": "latest",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.37.0",
+    "@anthropic-ai/bedrock-sdk": "^0.10.2",
+    "@anthropic-ai/vertex-sdk": "^0.7.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.848.0",
+    "@aws-sdk/credential-providers": "^3.848.0",
+    "@google/genai": "^1.0.0",
+    "@lmstudio/sdk": "^1.1.1",
+    "@mistralai/mistralai": "^1.9.18",
+    "openai": "^5.12.2",
+    "ollama": "^0.5.17",
+    "simple-git": "^3.20.0",
+    "fast-xml-parser": "^5.0.0",
+    "axios": "^1.12.0",
+    "delay": "^6.0.0",
+    "diff": "^5.2.0",
+    "tiktoken": "^1.0.0"
+  }
+}
