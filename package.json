@@ -1,6 +1,6 @@
 {
   "name": "obsidian-code-ai-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 Costrict 架构的 Obsidian AI 代码助手",
   "main": "main.js",
   "scripts": {

@@ -1,11 +1,11 @@
 {
-  "id": "code-ai-assistant",
-  "name": "Code AI Assistant",
-  "version": "1.0.0",
-  "minAppVersion": "0.15.0",
-  "description": "基于 Costrict 架构的 Obsidian AI 代码助手，支持本地 Git 仓库和 GitLab API 集成",
-  "author": "MOONL0323",
-  "authorUrl": "https://github.com/MOONL0323",
-  "fundingUrl": "https://github.com/MOONL0323/obsidian-code-ai-assistant",
-  "isDesktopOnly": false
+	"id": "code-ai-assistant",
+	"name": "Code AI Assistant",
+	"version": "1.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "基于 Costrict 架构的 Obsidian AI 代码助手，支持本地 Git 仓库和 GitLab API 集成",
+	"author": "MOONL0323",
+	"authorUrl": "https://github.com/MOONL0323",
+	"fundingUrl": "https://github.com/MOONL0323/obsidian-code-ai-assistant",
+	"isDesktopOnly": false
 }
