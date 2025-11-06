@@ -46,8 +46,9 @@ export class SettingsTab extends PluginSettingTab {
                 dropdown
                     .addOption('openai', 'OpenAI')
                     .addOption('anthropic', 'Anthropic')
+                    .addOption('constrict', 'Constrict (Internal)')
                     .setValue(this.plugin.settings.apiProvider)
-                    .onChange(async (value: 'openai' | 'anthropic') => {
+                    .onChange(async (value: 'openai' | 'anthropic' | 'constrict') => {
                         this.plugin.settings.apiProvider = value;
                         // 更新模型选项
                         this.plugin.settings.apiModel = AI_MODELS[value][0];
@@ -101,6 +102,37 @@ export class SettingsTab extends PluginSettingTab {
                             this.plugin.settings.apiBaseUrl = value;
                             await this.plugin.saveSettings();
                         });
+                });
+        }
+
+        // Constrict API URL
+        if (this.plugin.settings.apiProvider === 'constrict') {
+            new Setting(containerEl)
+                .setName('Constrict API URL')
+                .setDesc('输入公司内部 Constrict API 地址')
+                .addText((text) => {
+                    text
+                        .setPlaceholder('http://your-company-api.com/v1')
+                        .setValue(this.plugin.settings.constrictApiUrl || '')
+                        .onChange(async (value) => {
+                            this.plugin.settings.constrictApiUrl = value;
+                            this.plugin.settings.apiBaseUrl = value; // 同步到 baseUrl
+                            await this.plugin.saveSettings();
+                        });
+                });
+
+            new Setting(containerEl)
+                .setName('Constrict API Key')
+                .setDesc('输入 Constrict API 密钥（如果需要）')
+                .addText((text) => {
+                    text
+                        .setPlaceholder('可选')
+                        .setValue(this.plugin.settings.constrictApiKey || '')
+                        .onChange(async (value) => {
+                            this.plugin.settings.constrictApiKey = value;
+                            await this.plugin.saveSettings();
+                        });
+                    text.inputEl.type = 'password';
                 });
         }
     }

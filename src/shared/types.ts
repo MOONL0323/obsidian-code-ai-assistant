@@ -2,10 +2,14 @@
 
 export interface PluginSettings {
     // AI 配置
-    apiProvider: 'openai' | 'anthropic';
+    apiProvider: 'openai' | 'anthropic' | 'constrict';
     apiKey: string;
     apiModel: string;
     apiBaseUrl?: string;
+    
+    // Constrict 配置
+    constrictApiUrl?: string;
+    constrictApiKey?: string;
     
     // GitLab 配置
     gitlabUrl: string;
@@ -84,7 +88,7 @@ export interface FileTree {
 
 // AI 提供商配置
 export interface AIProviderConfig {
-    provider: 'openai' | 'anthropic';
+    provider: 'openai' | 'anthropic' | 'constrict';
     apiKey: string;
     model: string;
     baseUrl?: string;

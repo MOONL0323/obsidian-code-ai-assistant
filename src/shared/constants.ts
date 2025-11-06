@@ -17,33 +17,45 @@ export const COMMAND_GENERATE_DIAGRAM = 'generate-diagram';
 // API 模型
 export const AI_MODELS = {
     openai: [
+        'gpt-4o',
+        'gpt-4o-mini',
+        'gpt-4-turbo',
         'gpt-4',
-        'gpt-4-turbo-preview',
         'gpt-3.5-turbo',
     ],
     anthropic: [
+        'claude-3-5-sonnet-20241022',
         'claude-3-opus-20240229',
         'claude-3-sonnet-20240229',
         'claude-3-haiku-20240307',
+    ],
+    constrict: [
+        'default',
     ],
 } as const;
 
 // Token 价格（美元/1K tokens）
 export const TOKEN_PRICES = {
+    'gpt-4o': { prompt: 0.0025, completion: 0.01 },
+    'gpt-4o-mini': { prompt: 0.00015, completion: 0.0006 },
     'gpt-4': { prompt: 0.03, completion: 0.06 },
-    'gpt-4-turbo-preview': { prompt: 0.01, completion: 0.03 },
-    'gpt-3.5-turbo': { prompt: 0.0015, completion: 0.002 },
+    'gpt-4-turbo': { prompt: 0.01, completion: 0.03 },
+    'gpt-3.5-turbo': { prompt: 0.0005, completion: 0.0015 },
+    'claude-3-5-sonnet-20241022': { prompt: 0.003, completion: 0.015 },
     'claude-3-opus-20240229': { prompt: 0.015, completion: 0.075 },
     'claude-3-sonnet-20240229': { prompt: 0.003, completion: 0.015 },
     'claude-3-haiku-20240307': { prompt: 0.00025, completion: 0.00125 },
+    'default': { prompt: 0, completion: 0 },
 } as const;
 
 // 默认配置
 export const DEFAULT_SETTINGS = {
     apiProvider: 'openai' as const,
     apiKey: '',
-    apiModel: 'gpt-4-turbo-preview',
+    apiModel: 'gpt-4o-mini',
     apiBaseUrl: 'https://api.openai.com/v1',
+    constrictApiUrl: '',
+    constrictApiKey: '',
     gitlabUrl: 'https://gitlab.com',
     gitlabToken: '',
     repositories: [],

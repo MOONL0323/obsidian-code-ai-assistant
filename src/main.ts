@@ -20,7 +20,7 @@ export default class CodeAIAssistantPlugin extends Plugin {
     codeService!: CodeService;
 
     async onload() {
-        logger.info('🚀 Loading Code AI Assistant Plugin');
+        logger.info('Loading Code AI Assistant Plugin');
 
         // 加载设置
         await this.loadSettings();
@@ -48,11 +48,11 @@ export default class CodeAIAssistantPlugin extends Plugin {
         // 添加设置面板
         this.addSettingTab(new SettingsTab(this.app, this));
 
-        logger.info('✅ Plugin loaded successfully');
+        logger.info('Plugin loaded successfully');
     }
 
     async onunload() {
-        logger.info('👋 Unloading Code AI Assistant Plugin');
+        logger.info('Unloading Code AI Assistant Plugin');
     }
 
     /**
